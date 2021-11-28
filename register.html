@@ -1,0 +1,308 @@
+<?php
+
+    $serverName = "localhost";
+    $userName = "root";
+    $password = "";
+    $dbName = "farmy";
+
+    $conn = mysqli_connect($serverName, $userName, $password, $dbName);
+    if (!$conn)
+    {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    else{
+        echo "connected successfully";
+    }
+?>
+<DOCTYPE html>
+    <html>
+        <head>
+<style type="text/css">
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    body{
+        background-image:url("https://www.theindiaforum.in/sites/default/files/field/image/2021/05/28/ramkumar-radhakrishnan-wikimedia-1622193304.jpeg");
+        background-position: center;
+        background-size:auto;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        margin-top: 40px;   
+    }
+    .regform{
+        width: 850px;
+        background-color: rgba(0, 0, 0, 0.6);
+        margin:auto;
+        color:#ffffff;
+        padding:10px 0px 10px 0px;
+        text-align: center;
+        border-radius: 15px 15px 0px 0px;
+        margin-top:300px;
+    }
+    .main{
+        background-color: rgba(14, 187, 101, 0.5);
+        width: 850px;
+        margin:auto;
+        
+    }
+    form{
+        padding:10px;
+        margin-bottom: 200px;
+        margin-top:0px;
+    }
+    #name{
+        width: 100%;
+        height: 100px;
+    }
+    .name{
+        margin-left: 105px;
+        margin-top:2px;
+        margin-bottom:20px;
+        width: 125px;
+        color:white;
+        font-size:20px;
+        font-weight: 700;
+    }
+    .FirstName {
+        position: relative;
+        left: 250px;
+        top:-37px;
+        line-height: 40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+    }
+    .LastName{
+        position: relative;
+        left: 477px;
+        top:-80px;
+        line-height: 40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+    }
+    .FirstLabel{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left:292px;
+    top:-46px;
+  
+    }
+    .Lastlabel{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left:592px;
+    top:-76px;
+    
+    }
+    .email
+    {    
+    position: relative;
+    color: black;
+    text-transform: capitalize;
+    font-size: 16px;
+    left:250px;
+    top:-56px;
+    line-height:35px;
+    width:532px;
+    padding: 0 22px;
+    border-radius: 6px;
+    }
+   .pass{
+    position: relative;
+        left: 242px;
+        top:-60px;
+        line-height: 40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+   }
+   .cpass{
+    position: relative;
+        left: 557px;
+        top:-120px;
+        line-height: 40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+   }
+   .c1name{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left:292px;
+    top:26px;
+        
+   }
+   .c2name{
+    position: relative;
+    color: #e5e5e5;
+    text-transform: capitalize;
+    font-size: 14px;
+    left:552px;
+    top:-30px;
+   }
+   .passw{
+    margin-left: 325px;
+        margin-top:20px;
+        margin-bottom:20px;
+        width: 55px;
+        color:white;
+        font-size:20px;
+        font-weight: 700;
+   }
+   .phone{
+    position: relative;
+        left: 382px;
+        top:-60px;
+        line-height: 40px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        width: 300px;
+
+}
+.add{
+    position: relative;
+        left: 382px;
+        top:-60px;
+        line-height: 60px;
+        border-radius: 6px;
+        padding: 0 22px;
+        font-size: 16px;
+        width: 300px;
+}
+.radio{
+    display: inline-block;
+    padding-right: 70px;
+    font-size: 20px;
+    margin-left: 25px;
+    margin-top:20px;
+    color:white;
+}
+.radio input{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    cursor: pointer;
+    outline: none;
+}
+button{
+    background-color: #3baf3b;
+    display: block;
+    margin:50px 250px 0px 250px;
+    text-align:center;
+    border-radius:12px;
+    border: 2px solid #366473;
+    padding:14px 110px;
+    outline: none;
+    color:white;
+    cursor: pointer;
+    transition:0.25px;
+
+}
+ul{
+   float:right;
+   list-style-type:none;
+   margin-top: 25px;
+   }
+   ul li{
+   display:inline-block;
+   }
+   ul li a{
+       text-decoration:none;
+       color:white;
+       padding:5px 20px;
+       border:1px solid transparent;
+       font-weight: bolder;
+   
+   }
+   ul li a:hover{
+       background-color:orange;
+       color:black;
+       transition:0.6s ease;
+   }
+   ul li.active a{
+       background-color: orange;
+       color:#000;
+   }
+   .logo img{
+   float:left;
+   width:150px;
+   color: chartreuse;
+
+   
+   }
+   header{
+   
+   height:5px;
+   background-size:auto;
+   background-position:center;
+   }
+</style>
+
+        </head>
+        <body>
+            <header>                    
+                    <div class="logo">
+                       <h2 style="color: chartreuse;">Farmy<img src="images/logo.jpg"></h2> 
+                    </div>
+                    <div class="links">
+                <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li  class="active"><a href="#">Register</a></li>
+                </ul></div></header>
+            <div class="regform"><h1>Registration Form</h1></div>
+            <div class="main">
+                <form name="signup" action="login.html">
+                    <div id="name">
+                        <h2 class="name">Name:</h2>
+                        <input class="FirstName" type="text" name="FirstName"><br>
+                        <label class="FirstLabel">First Name</label>
+                        <input class="LastName" type="text" name="LastName"><br>
+                        <label class="Lastlabel">Last Name</label>
+                    </div>
+                    <h2 class="name">Email</h2>
+                    <input class="email" type="text" name="email"><br>
+                    <div id="passw">
+                        <h2 class="name">Password:</h2>
+                    <h2 class="c1name">Password</h2>
+                    <input class="pass" type="text" name="pass">
+                    <h2 class="c2name">Confirm Password</h2>
+                    <input class="cpass" type="text" name="cpass"><br>
+                    </div>
+                    <h2 class="name">Phone no</h2>
+                    <input class="phone" type="text" name="phone"><br>
+                    <h2 class="name">address</h2>
+                    <input class="add" type="textarea" name="add"><br>
+                    <h2 id="category"></h2>
+                    <label class="radio">
+                    <input class="radio1" type="radio" checked="checked" name="">
+                    <span class="checkmark"></span>
+                    Farmer</label>
+                    <label class="radio">
+                        <input class="radio2" type="radio" name="">
+                        <span class="checkmark"></span>
+                        Merchant</label>
+                        <label class="radio">
+                            <input class="radio2" type="radio" name="">
+                            <span class="checkmark"></span>
+                            Customer</label>
+                            <label class="radio">
+                                <input class="radio2" type="radio" name="">
+                                <span class="checkmark"></span>
+                                Admin</label>
+                    <button type="submit" onclick="document.getElementById('form1')">Register</button>
+
+
+                </form>
+            </div>
+        </body>
+    </html>
