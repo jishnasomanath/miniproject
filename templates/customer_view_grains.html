@@ -1,0 +1,65 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <title>Child Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href='{% static "table1/css/style.css" %}'>
+
+</head>
+<body>
+<h5 align="right"><a href="{% url 'customer_back' %}">Back to home</a></h5>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center mb-5">
+      <h2 class="heading-section">Vegetables</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-wrap">
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
+            <th>Grain Name</th>
+            <th>Grain Image</th>
+            <th>Price</th>
+            <th>Farmer Name</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          {% for i in cv_graindata %}
+          <tr>
+            <!--tr class="alert" role="alert">
+              <th scope="row">001</th-->
+            <td>{{i.productname}}</td>
+            <td><img src="{{i.productimage.url}}" height="100" width="100"></td>
+            <td>{{i.productprice_qty}}</td>
+            <td>{{i.farmername}}</td>
+          </tr>
+
+
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<script src='{% static "table1/js/jquery.min.js" %}'></script>
+<script src='{% static "table1/js/popper.js" %}'></script>
+<script src='{% static "table1/js/bootstrap.min.js" %}'></script>
+<script src='{% static "table1/js/main.js" %}'></script>
+
+</body>
+</html>
+

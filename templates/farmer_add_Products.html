@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href='{% static "product/fonts/material-icon/css/material-design-iconic-font.min.css" %}'>
+
+    <!-- Main css -->
+    <link rel="stylesheet" href='{% static "product/css/style.css" %}'>
+</head>
+<body>
+
+<div class="main">
+
+    <div class="container">
+        <div class="booking-content">
+            <div class="booking-image">
+                <img class="booking-img" src='{% static "product/images/pri2.jpg" %}' alt="Booking Image">
+            </div>
+            <div class="booking-form">
+                <form id="booking-form" method="post" enctype="multipart/form-data" action="{% url 'farmer_addproduct_save' %}">
+                    {% csrf_token %}
+                    <h2>Add Your Products </h2>
+                    <div class="form-group form-input">
+                        <input type="text" name="fname" value="{{request.session.farmer_name}}" required/>
+
+                        <label class="form-label">Your Name</label>
+
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group form-input">
+                        <input type="text" name="pname" value="" required/>
+                        <label class="form-label">Product Name</label>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <div class="select-list">
+                            <select name="pcat" required>
+                                <option>Select Product Category</option>
+                                <option value="Vegetable" style="color:blue">Vegetable</option>
+                                <option value="Fruits" style="color:blue">Fruits</option>
+                                <option value="Grains"style="color:blue">Grains</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="form-group form-input">
+                        <!--<label class="form-label">Product Image</label>-->
+                        <input type="file" name="pimage" value="" required/>
+
+
+                    </div>
+                    <br>
+                    <div class="form-group form-input">
+                        <input type="text" name="p_qtyprice" value="" required/>
+                        <label class="form-label">Product Price/Quantity : 100 Rs/I KG</label>
+                    </div>
+                    <br>
+                    <br>
+
+
+                    <div class="form-submit">
+                        <input type="submit" value="ADD Now" class="submit" id="submit" name="submit"/>
+                        <a href="#" class="vertify-booking">Verify your booking info from your phone</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src='{% static "product/vendor/jquery/jquery.min.js" %}'></script>
+<script src='{% static "product/js/main.js" %}'></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

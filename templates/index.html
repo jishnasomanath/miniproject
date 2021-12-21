@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>Den</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">	
+<!-- bootstrap css -->
+<link rel="stylesheet" type="text/css" href='{% static "index/css/bootstrap.min.css" %}'>
+<!-- style css -->
+<link rel="stylesheet" type="text/css" href='{% static "index/css/style.css" %}'>
+<!-- Responsive-->
+<link rel="stylesheet" href='{% static "index/css/responsive.css" %}'>
+<!-- fevicon -->
+<link rel="icon" href='{% static "index/images/fevicon.png" type="image/gif" %}' />
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href='{% static "index/css/jquery.mCustomScrollbar.min.css" %}'>
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+<!-- owl stylesheets --> 
+<link rel="stylesheet" href='{% static "index/css/owl.carousel.min.css" %}'>
+<link rel="stylesheet" href='{% static "index/css/owl.theme.default.min.css" %}'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+</head>
+<body>
+	<header>
+		<div class="layout_padding banner_section_start">
+         <!-- header inner -->
+         <div class="header">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo"><a href="#home"><img src='{% static "index/images/logo.png" %}' style="max-width: 100%;"></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                     <div class="menu-area">
+                        <div class="limit-box">
+                           <nav class="main-menu">
+                              <ul class="menu-area-main">
+                                 <li class="active"><a href="{% url 'home' %}">Home</a></li>
+
+                                 <li><a href="#products">Signup</a></li>
+								  <li><a href="{% url 'login' %}">Login</a></li>
+
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                 </div>
+               </div>
+            </div>
+         </div>
+         <!-- end header inner -->		
+	<!-- banner start-->
+	<div class="layout_padding banner_section">
+		<div class="container">
+           <div id="main_slider" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row ">
+				<div class="col-md-6 taital">
+					<h1 class="taital">Crop<strong class="banner_taital">Selling System</strong></h1>
+                     <p class="lorem_text">Crop selling system is a platform for customers farmers and merchants to build a better relationship together!!come lets improving agriculture together</p>
+				</div>
+				<div class="col-md-6">
+					<div class="banner-image"><img src='{% static "index/images/banner-image.jpg"  %}'style="max-width: 100%;"></div>
+				</div>
+				<div class="banner_bt">
+
+				</div>
+			</div>
+    </div>
+    <div class="carousel-item">
+      <div class="row ">
+				<div class="col-md-6 taital">
+					<h1>Crop<strong class="banner_taital">Selling System</strong></h1>
+                     <p class="lorem_text">sell organic pesticides </n>plot for rent<br> ,buy and sell products <br> </p>
+				</div>
+				<div class="col-md-6">
+					<div class="banner-image"><img src='{% static "index/images/cr3.jpg" %}' style="max-width: 100%;"></div>
+				</div>
+				<div class="banner_bt">
+				<!--<button class="bt_main"><a href="#">Read More</a></button>-->
+				</div>
+			</div>
+    </div>
+    <div class="carousel-item">
+     <div class="row ">
+				<div class="col-md-6 taital">
+					<h1>Crop<strong class="banner_taital">Selling System</strong></h1>
+                     <p class="lorem_text">Crop selling system is a platform for customers farmers and merchants to build a better relationship together!!come lets improving agriculture together</p>
+				</div>
+				<div class="col-md-6">
+					<div class="banner-image"><img src='{% static "index/images/cr4.jpg" %}' style="max-width: 100%;"></div>
+				</div>
+				<div class="banner_bt">
+				<!--<button class="bt_main"><a href="#">Read More</a></button>-->
+				</div>
+			</div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa fa-angle-left"></i></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+			
+		</div>
+	</div>
+    </div>
+	</header>
+	<!-- banner end-->
+	<!-- about start-->
+	<div id="about" class="layout_padding about_section">
+		<div class="container">
+			<div class="row">
+		        <div class="col-md-6">
+		        	<div><img src='{% static "index/images/cr7.jpg" %}' style="max-width: 100%;"></div>
+		        </div>
+		        <div class="col-md-6">
+		        	<h1 class="about_text"><strong>About Us<span class="color"></span></strong></h1>
+		        	<p class="about_taital">Crop selling system is a platform for customers farmers and merchants to build a better relationship together!!come lets improving agriculture together</p>
+		        	<button class="read_more"><a href="#">Read More</a></button>
+		        </div>
+			</div>
+		</div>
+	</div>
+	<!-- product start-->
+	<div id="products" class="layout_padding product_section ">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="product_text"><strong><span class="den">Signup</span>As</strong></h1>
+				</div>
+			</div>
+		    <div class="product_section_2 images">
+			    <div class="row">
+			    	<div class="col-sm-4">
+			    		<div class="images"><img src='{% static "index/images/cr8.jpg" %}' style="max-width: 100%; width: 100%;"></div>
+			    		<h2 class="den_text croissants"> <a href="{% url 'farmer_signup' %}">Farmer</a></h2>
+			    	</div>
+			    	<div class="col-sm-4">
+			    		<div class="images"><img src='{% static "index/images/cr10.jpg" %}' style="max-width: 100%; width: 100%;"></div>
+			    		<h2 class="den_text"><a href="{% url 'customer_signup' %}">Customer</a></h2>
+			    	</div>
+			    	<div class="col-sm-4">
+			    		<div class="images"><img src='{% static "index/images/cr11.jpg" %}' style="max-width: 100%; width: 100%;"></div>
+			    		<h2 class="den_text"><a href="{% url 'merchent_signup' %}">Merchant</a></h2>
+			    	</div>
+			    
+		    
+		   
+			    	<!--<div class="col-sm-4">
+			    		<div class="images"><img src='{% static "index/images/about-img4.png" %}' style="max-width: 100%; width: 100%;"></div>
+			    		<h2 class="den_text"><a href="#">Cup Cake</a></h2>
+			    	</div>
+			    	<div class="col-sm-4">
+			    		<div class="images"><img src='{% static "index/images/about-img5.png" %}'style="max-width: 100%; width: 100%;"></div>
+			    		<h2 class="den_text"><a href="#">Donut</a></h2>
+			    	</div>
+			    	<div class="col-sm-4">
+			    		<div class="images"><img src='{% static "index/images/about-img6.png" %}' style="max-width: 100%; width: 100%;"></div>
+			    		<h2 class="den_text"><a href="#">Chocolate Cup Cake</a></h2>
+			    	</div>-->
+			    </div>
+		    </div>
+		</div>
+	</div>
+	<!-- product end-->
+	<!-- Gallery start-->
+
+	<!-- contact end-->
+	<!-- copyright start-->
+    <div class="copyright_section">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-sm-12">
+    				<p class="copyright_taital">2019 All Rights Reserved. <a href="https://html.design">Free html  Templates</p>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+
+
+	<!-- copyright end-->
+
+    <!-- Javascript files-->
+    <script src='{% static "index/js/jquery.min.js" %}'></script>
+    <script src='{% static "index/js/popper.min.js" %}'></script>
+    <script src='{% static "index/js/bootstrap.bundle.min.js" %}'></script>
+      <script src='{% static "index/js/jquery-3.0.0.min.js" %}'></script>
+      <script src='{% static "index/js/plugin.js" %}'></script>
+      <!-- sidebar -->
+      <script src='{% static "index/js/jquery.mCustomScrollbar.concat.min.js" %}'></script>
+      <script src='{% static "index/js/custom.js" %}'></script>
+      <!-- javascript --> 
+      <script src='{% static "index/js/owl.carousel.js" %}'></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+      <script>
+      $(document).ready(function(){
+      $(".fancybox").fancybox({
+         openEffect: "none",
+         closeEffect: "none"
+         });
+         
+         $(".zoom").hover(function(){
+         
+         $(this).addClass('transition');
+         }, function(){
+         
+         $(this).removeClass('transition');
+         });
+         });
+         </script> 
+
+         <script>
+      // This example adds a marker to indicate the position of Bondi Beach in Sydney,
+      // Australia.
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 11,
+          center: {lat: 40.645037, lng: -73.880224},
+          });
+
+        var image = 'images/location_point.png';
+          var beachMarker = new google.maps.Marker({
+             position: {lat: 40.645037, lng: -73.880224},
+             map: map,
+             icon: image
+          });
+        }
+        </script>
+        <!-- google map js -->
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+        <!-- end google map js -->
+
+
+
+
+</body>
+</html>

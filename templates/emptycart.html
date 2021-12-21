@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+
+  <!-- Core Style CSS -->
+  <link rel="stylesheet" href="{% static 'css/core-style.css' %}">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+
+  <!-- Responsive CSS -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+
+  <title>IndiaTrends</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'customer/css/reset.css' %}" />
+  <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'customer/css/main.css' %}" />
+  <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'customer/css/2col.css' %}" title="2col" />
+  <link rel="alternate stylesheet" media="screen,projection" type="text/css" href= "{% static 'customer/css/1col.css' %}" title="1col" />
+  <!--[if lte IE 6]><link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'css/main-ie6.css' %}" /><![endif]-->
+  <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'customer/css/style.css' %}" />
+  <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'customer/css/mystyle.css' %}" />
+  <script type="text/javascript" src="{% static 'customer/js/jquery.js' %}"></script>
+  <script type="text/javascript" src="{% static 'customer/js/switcher.js' %}"></script>
+  <script type="text/javascript" src="{% static 'customer/js/toggle.js' %}"></script>
+  <script type="text/javascript" src="{% static 'customer/js/ui.core.js' %}"></script>
+  <script type="text/javascript" src="{% static 'customer/js/ui.tabs.js' %}"></script>
+  <script type="text/javascript">
+	$(document).ready(function(){
+		$(".tabs > ul").tabs();
+	});
+	</script>
+</head>
+<body>
+<div id="main">
+  <!-- Tray -->
+  <div id="tray" class="box">
+    <p class="f-left box">
+      <!-- Switcher -->
+      <!-- <span class="f-left" id="switcher"> <a href="javascript:void(0);" rel="1col" class="styleswitch ico-col1" title="Display one column"><img src="design/switcher-1col.gif" alt="1 Column" /></a> <a href="javascript:void(0)" rel="2col" class="styleswitch ico-col2" title="Display two columns"><img src="{% static 'customer/design/switcher-2col.gif' %}" alt="" /></a> </span> --> <!-- Project: <strong>Your Project</strong> </p> -->
+    <p class="f-right">User:&nbsp;<strong> {{request.session.customer_name}}</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><a href="{% url 'customer_back' %}" id="logout">Home</a></strong></p>
+  </div>
+  <!--  /tray -->
+  <hr class="noscreen" />
+  <!-- Menu -->
+
+  <!-- /header -->
+  <hr class="noscreen" />
+  <!-- Columns -->
+  <div id="cols" class="box">
+    <!-- Aside (Left Column) -->
+    <div id="aside" class="box">
+      <div class="padding box">
+        <!-- Logo (Max. width = 200px) -->
+        <p id="logo"><a href="#"><img src="{% static 'customer/tmp/icon.jpg' %}" alt="" />
+        </a></p> <h2 style="text-transform: capitalize;"> Hello, {{request.session.customer_name}}</h2>
+        <!-- Search -->
+
+        <!-- <p id="btn-create" class="box"><a href="#"><span>Create a new project</span></a></p> -->
+      </div>
+      <!-- /padding -->
+      <ul class="box">
+
+      </ul>
+    </div>
+    <!-- /aside -->
+    <hr class="noscreen" />
+    <!-- Content (Right Column) -->
+    <div id="content" class="box" style="height: 1000px;">
+
+      <!-- /content -->
+
+
+      <h2>Your Cart is Empty !</h2>
+
+
+    </div>
+
+  </div>
+  <!-- /cols -->
+  <hr class="noscreen" />
+  <!-- Footer -->
+  <div id="footer" class="box">
+    <p class="f-left">&copy; 2020 <a href="#">India Trends</a>, All Rights Reserved &reg;</p>
+
+  </div>
+  <!-- /footer -->
+</div>
+<!-- /main -->
+</form>
+</body>
+</html>

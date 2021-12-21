@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="icon" href="{% static 'cart/img/core-img/favicon.ico' %}">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="{% static 'cart/css/core-style.css' %}">
+    <link rel="stylesheet" href="{% static 'cart/style.css' %}">
+
+    <!-- Responsive CSS -->
+    <link href="{% static 'cart/css/responsive.css' %}" rel="stylesheet">
+
+
+    <title>IndiaTrends</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'cart/css1/reset.css' %}"/>
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'cart/css1/main.css' %}"/>
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'cart/css1/2col.css' %}"
+          title="2col"/>
+    <link rel="alternate stylesheet" media="screen,projection" type="text/css" href="{% static 'cart/css1/1col.css' %}"
+          title="1col"/>
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'cart/css/main-ie6.css' %}"/>
+    <![endif]-->
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'cart/css1/style.css' %}"/>
+    <link rel="stylesheet" media="screen,projection" type="text/css" href="{% static 'cart/css1/mystyle.css' %}"/>
+    <script type="text/javascript" src="{% static 'cart/js1/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'cart/js1/switcher.js' %}"></script>
+    <script type="text/javascript" src="{% static 'cart/js1/toggle.js' %}"></script>
+    <script type="text/javascript" src="{% static 'cart/js1/ui.core.js' %}"></script>
+    <script type="text/javascript" src="{% static 'cart/js1/ui.tabs.js' %}"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $(".tabs > ul").tabs();
+    });
+
+    </script>
+</head>
+<body>
+<div id="main">
+    <!-- Tray -->
+    <div id="tray" class="box">
+        <p class="f-left box">
+            <!-- Switcher -->
+            <!-- <span class="f-left" id="switcher"> <a href="javascript:void(0);" rel="1col" class="styleswitch ico-col1" title="Display one column"><img src="design/switcher-1col.gif" alt="1 Column" /></a> <a href="javascript:void(0)" rel="2col" class="styleswitch ico-col2" title="Display two columns"><img src="{% static 'customer/design/switcher-2col.gif' %}" alt="" /></a> </span> -->
+            <!-- Project: <strong>Your Project</strong> </p> -->
+        <p class="f-right">User:&nbsp;<strong> {{request.session.customer_name}}</a></strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <strong><a href="{% url 'customer_logout' %}" id="logout">Log out</a></strong></p>
+    </div>
+    <!--  /tray -->
+    <hr class="noscreen"/>
+    <!-- Menu -->
+    <div id="menu" class="box">
+        <ul class="box f-right">
+            <li><a href="#"><span><strong>My Cart </strong></span></a></li>
+        </ul>
+        <ul class="box">
+            <li id="menu-active"><a href="{% url 'customer_back' %}"><span>Home</span></a></li>
+            <!-- Active -->
+
+        </ul>
+    </div>
+    <!-- /header -->
+    <hr class="noscreen"/>
+    <!-- Columns -->
+    <div id="cols" class="box">
+        <!-- Aside (Left Column) -->
+        <div id="aside" class="box">
+            <div class="padding box">
+                <!-- Logo (Max. width = 200px) -->
+                <p id="logo"><a href="#"><img src="{% static 'customer/tmp/icon.jpg' %}" alt=""/>
+                </a></p>
+                <h2 style="text-transform: capitalize;"> Hello, {{request.session.customer_name}}</h2>
+                <!-- Search -->
+
+                <!-- Create a new project -->
+                <!-- <p id="btn-create" class="box"><a href="#"><span>Create a new project</span></a></p> -->
+            </div>
+            <!-- /padding -->
+            <ul class="box">
+
+            </ul>
+        </div>
+        <!-- /aside -->
+        <hr class="noscreen"/>
+        <!-- Content (Right Column) -->
+        <div id="content" class="box" style="height: 2000px;">
+
+            <!-- ****** Cart Area Start ****** -->
+            <div class="cart_area section_padding_100 clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="cart-table clearfix">
+                                <table class="table table-responsive" border="2">
+                                    <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                                    </thead>
+                                    <body>
+                                    {% for i in products %}
+                                    <tr>
+                                        <td class="cart_product_img d-flex align-items-center">
+                                            <a href="#"> <img src="{{i.productid.productimage.url}}" height="100"
+                                                              width="100" alt=""></a>
+                                            <h6>{{i.productid.productname}}</h6>
+                                        </td>
+                                        <td class="price">Rs.{{i.productid.productprice_qty}}</td>
+
+
+                                        <td class="qty">
+                                            <div class="quantity">
+
+                                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="99"
+                                                       name="quantity" value="{{i.product_quantity}}" readonly="">
+
+                                            </div>
+                                        </td>
+                                        <td class="total_price"><span>Rs.{{i.total_price}}</span></td>
+                                    </tr>
+                                    {% endfor %}
+                                    </body>
+                                </table>
+                            </div>
+
+                            <div class="cart-footer d-flex mt-30">
+                                <div class="back-to-shop w-50" align="center">
+                                    <a href="{% url 'customer_back' %} ">Continue shopping</a>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="back-to-shop w-50" align="center">
+                                    <a href="{% url 'clearcart' %}">clear cart</a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="coupon-code-area mt-70">
+
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <div class="cart-total-area mt-70">
+                                <div class="cart-page-heading">
+                                    <h3>Cart total</h3>
+
+                                    <ul class="cart-total-chart">
+                                        <li><span>Subtotal</span> <span>Rs.{{gtotal.total_price__sum}} </span></li>
+                                        <li><span>Shipping</span> <span>Free</span></li>
+                                        <li><span><strong>Total</strong></span> <span><strong>Rs.{{gtotal.total_price__sum}} </strong></span>
+                                        </li>
+                                    </ul>
+                                    <a href="{%url 'customer_checkout' %}" class="btn karl-checkout-btn">Proceed to
+                                        checkout</a></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- /cols -->
+    <hr class="noscreen"/>
+    <!-- Footer -->
+    <div id="footer" class="box">
+        <p class="f-left">&copy; 2020 <a href="#">India Trends</a>, All Rights Reserved &reg;</p>
+
+    </div>
+    <!-- /footer -->
+</div>
+<!-- /main -->
+</form>
+</body>
+</html>
